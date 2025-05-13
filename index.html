@@ -28,5 +28,21 @@ PARKING WITHOIUT SCAN: $45 ONE TIME +TOWING
 You must Acept and Agree to listed rules and regulationes. Please CLICK the button below to open default messaging app on your phone, enter your HOST BUILDING AND UNIT NO, TAKE PHOTO of the rear end of your vehicle parked showing legible license number, and SEND a prefilled text message stating you accept and agree to all, otherwise plase leave the parking to avoid violation:
 
 For additional info, suggestions and compalaints call WG Association at (210)343-5648. Thank You. </p>
+       <h1>Send a Predefined Text</h1>
+    <p>Click the button below to send a text message to the preset phone number.</p>
+    
+    <!-- Button to send SMS -->
+    <button onclick="sendSMS()">Send SMS</button>
+
+    <script>
+        function sendSMS() {
+            // Replace the phone number and message below
+            const phoneNumber = "1234567890";
+            const message = "Hello, this is a predefined text message!";
+            
+            // Open the SMS URI scheme
+            window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+        }
+    </script>
 </body>
 </html>
