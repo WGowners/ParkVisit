@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Regulations</title>
+    <title>Send Prefilled Text Message</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
+            background-color: #f9f9f9;
         }
         h1 {
             text-align: center;
@@ -18,6 +19,7 @@
             max-width: 600px;
             margin: auto;
             padding: 20px;
+            background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,6 +35,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            display: inline-block;
         }
         .button:hover {
             background-color: #0056b3;
@@ -46,24 +49,16 @@
 </head>
 <body>
     <div class="content">
-        <h1>SCHEDULE</h1>
-        <p>FREE TIME PER CONDO UNIT PER MONTH: 8 DAYS / 8 x 24 HRS</p>
-        <p>PARKING CHARGE AFTER FREE TIME: $15/ 24HR DAY</p>
-        <p>OVERSTAY WITHOUT RENEW: $25 ONE TIME + TOWING</p>
-        <p>PARKING WITHOUT SCAN: $45 ONE TIME + TOWING</p>
-        <p>
-            You must accept and agree to the listed rules and regulations. 
-            Please click the button below to open the default messaging app on your phone, 
-            enter your HOST BUILDING AND UNIT NO, and provide your LICENSE PLATE PHOTO.
-        </p>
+        <h1>Send a Text Message</h1>
+        <p>Click the button below to open the default text messaging app on your phone. The message will be prefilled, and you need to review and send it.</p>
         <div class="button-container">
             <a class="button" 
-               href="sms:+12103435648?body=I%20accept%20and%20agree%20to%20all%20rules%20and%20regulations.%20Host%20Building%20and%20Unit%20No:%20[please%20enter]%20License%20Plate%20Photo:%20[attach%20photo]">
-               Agree and Send SMS
+               href="sms:+12103435648?body=Hello,%20I%20am%20visiting.%20Here%20is%20my%20information:%20[Enter%20your%20details]">
+               Send Text
             </a>
         </div>
         <footer>
-            <p>For additional info, suggestions, and complaints, call WG Association at (210) 343-5648. Thank you.</p>
+            <p>For assistance, contact us at (210) 343-5648. Thank you!</p>
         </footer>
     </div>
 </body>
