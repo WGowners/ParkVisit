@@ -94,28 +94,14 @@
             <li>Thank you for your cooperation!</li>
         </ul>
         <div class="button-container">
-        <a
+     <a
   class="button"
   id="smsButton"
-  href="#"
+  href="sms:+12103435648?&body=I%20read%20and%20agree%20to%20visitor%20parking%20rules%20and%20shared%20free%20parking%20time%3B%20My%20Host%27s%20building%20and%20unit%23%20is%3A%20%20%20%20%2CMy%20vehicle%20make%2C%20color%20and%20license%20plate%20are%3A%20%20%20%20"
   aria-label="Open texting app to send parking registration text"
->Click here to open texting app to send registration text to WG Board</a>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var number = '+12103435648';
-    var body = encodeURIComponent("I read and agree to visitor parking rules and shared free parking time; My Host's building and unit# is:    ,My vehicle make, color and license plate are:    ");
-    var smsLink = '';
-
-    // iOS devices require ?&body=, others (Android) use ?body=
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      smsLink = 'sms:' + number + '?&body=' + body;
-    } else {
-      smsLink = 'sms:' + number + '?body=' + body;
-    }
-
-    document.getElementById('smsButton').setAttribute('href', smsLink);
-  });
-</script>
+>
+  Click here to open texting app to send registration text to WG Board
+</a>
         </div>
     </main>
 <footer>
