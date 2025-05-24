@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WG Visitor Parking Rules and Regulations</title>
     <meta name="description" content="Official rules and regulations for visitor parking at WG. Learn about parking time limits, fees, and how to register your vehicle.">
-    <meta name="keywords" content="visitor parking, WG Condo Association,rules and regulations,QR code scan,Vehicle registration">
+    <meta name="keywords" content="visitor parking, WG Condo Association, rules, regulations, QR code, vehicle registration">
     <meta name="author" content="WGowners">
     <style>
         body {
@@ -14,11 +14,15 @@
             line-height: 1.6;
             background-color: #f9f9f9;
         }
-        h1 {
+        header {
             text-align: center;
-            color: #333;
+            margin-bottom: 24px;
         }
-        main {
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+        main[role="main"] {
             max-width: 600px;
             margin: auto;
             padding: 20px;
@@ -36,49 +40,93 @@
         }
         .button {
             background-color: #007BFF;
-            color: white;
+            color: #fff;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
             display: inline-block;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
         }
         .button:hover, .button:focus {
             background-color: #0056b3;
+            outline: 2px solid #0056b3;
+            text-decoration: underline;
         }
         footer {
             text-align: center;
             margin-top: 20px;
             font-size: 14px;
+            color: #555;
+        }
+        @media (max-width: 640px) {
+            main[role="main"] {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            .button {
+                width: 100%;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>WG VISITOR PARKING RULES AND REGULATIONS: (upd 5/23/25;Scroll down to send text msg to register your vehicle)</h1>
+    <header>
+        <h1>WG VISITOR PARKING RULES AND REGULATIONS</h1>
+        <p>(Updated 5/23/25. Scroll down to register your vehicle by text message.)</p>
+    </header>
+    <main role="main">
         <ul>
-            <li>To ensure fair and equal opportunity to use visitor parking spots by all rsients and their guests,
-                permitted PARKING TIME IS LIMITED TO 24 HOURS per each QR-code-scan. After 24 Hrs expired, within a 20-minute grace period, the driver may extend the parking time by repeating QR scan/ Text — otherwise, he has to vacate the parking spot.</li>
-            <li>OVERSTAY-PARKING with no scan within the grace period will be charged $30 and the vehicle will be subject to towing.</li>
-            <li>EVERY CONDO UNIT HAS A CREDIT FOR 8 x 24 HOURS SHARED FREE PARKING TIME PER CALENDAR MONTH! Not transferable to the next month or a different unit.</li>
-            <li>EXCESS-PARKING by any and all condo unit associated vehicles will be charged at $15 per day. A scan is required for every day.</li>
-            <li>VEHICLES PARKED WITHOUT QR CODE SCAN AND TEXT MESSAGE WITH REQUIRED INFO WILL BE FINED, TAGGED AND TOWING SERVICE WILL BE CALLED.</li>
-            <li>The Association reserves the right to use all legal means of immobilizing or bracing the vehicle while on the Association's property until fees are collected in full.</li>
-            <li>Vehicle operators must agree to all rules above and click the button below to open your default texting application and
-                SEND PREPOPULATED MESSAGE, ADDING HOST'S BUILDING AND CONDO NUMBER; VEHICLE COLOR, MAKE, MODEL AND LICENSE PLATE NUMBER (OR SNAP
-                VEHICLE'S END PHOTO W PLATE) to register parked vehicle with WG Association.
-                IF YOU DO NOT AGREE OR FAIL TO SEND TEXT WITH REQUIRED INFO, You have to REMOVE YOUR VEHICLE OR IT WILL BE REMOVED AT OWNERS EXP.
-            Thank You for your cooperation!</li>
+            <li>To ensure fair and equal opportunity for all residents and their guests, <strong>permitted PARKING TIME IS LIMITED TO 24 HOURS per each QR code scan.</strong> After 24 hours expire, there is a 20-minute grace period during which the driver may extend parking by scanning the QR code and registering again.</li>
+            <li>Overstay parking (no scan within the grace period) will be charged <strong>$30</strong>, and the vehicle will be subject to towing.</li>
+            <li><strong>Each condo unit receives 8 x 24-hour shared free parking credits per calendar month.</strong> Credits are not transferable to the next month or to a different unit.</li>
+            <li>Excess parking by any/all vehicles associated with a condo unit will be charged at <strong>$15 per day</strong>. A scan is required for each day.</li>
+            <li>Vehicles parked <strong>without QR code scan and text message registration</strong> will be fined, tagged, and subject to towing.</li>
+            <li>The Association reserves the right to use all legal means of immobilizing or bracing the vehicle while on the Association's property until all fees are collected in full.</li>
+            <li>Vehicle operators must agree to all rules above and <strong>register their vehicle via the button below</strong> by sending a text message with the required information.</li>
+            <li>If you do not agree or fail to send the required registration text, you must remove your vehicle or it will be removed at the owner's expense.</li>
+            <li>Thank you for your cooperation!</li>
         </ul>
-
         <div class="button-container">
-            <a class="button" 
-               href="sms:+12103435648?body=I read and agreed to visitor parking rules and shared free parking timenand that the Condo Unit Owner's Account might be charged
-                for OVERSTAY and EXCESS PARKING violations. Building Unit:....., Condo Unit:........Vehicle Make,color and Lic.Plate# ? (or attach Photo showing lic)"
+            <!-- Confirmation modal (hidden by default) -->
+            <dialog id="confirmDialog">
+                <form method="dialog">
+                    <p><strong>Confirm Registration</strong></p>
+                    <p>Are you sure you want to open your texting app to register your vehicle as required?</p>
+                    <menu>
+                        <button value="cancel">Cancel</button>
+                        <button id="confirmSend" value="default">Proceed</button>
+                    </menu>
+                </form>
+            </dialog>
+            <button
+                class="button"
+                id="smsButton"
                 aria-label="Open texting app to send parking registration text"
-          >CLICK HERE TO OPEN TEXTING APP TO SEND TEXT TO WG BOARD</a>
+            >Click here to open texting app to send registration text to WG Board</button>
         </div>
-        <footer>
-            <p>Contact WG Board at <a href="tel:+12103435648">(210) 343-5648</a> for additional info and assistance. Thank you!</
-
+    </main>
+    <footer>
+        <p>Contact WG Board at <a href="tel:+12103435648" rel="nofollow noopener">(210) 343-5648</a> for additional info and assistance. Thank you!</p>
+    </footer>
+    <script>
+        // Modal confirmation before opening SMS
+        const smsButton = document.getElementById('smsButton');
+        const confirmDialog = document.getElementById('confirmDialog');
+        const confirmSend = document.getElementById('confirmSend');
+        smsButton.addEventListener('click', () => {
+            confirmDialog.showModal();
+        });
+        confirmSend.addEventListener('click', () => {
+            window.location.href =
+                "sms:+12103435648?body=I read and agree to visitor parking rules and shared free parking time, and understand that the Condo Unit Owner's Account might be charged for overstay and excess parking violations. Building Unit:_____, Condo Unit:_____, Vehicle Make, Color, Model, and License Plate #: _____ (or attach photo showing license plate).";
+        });
+    </script>
+</body>
+</html>
