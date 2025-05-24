@@ -116,18 +116,5 @@
     <footer>
         <p>Contact WG Board at <a href="tel:+12103435648" rel="nofollow noopener">(210) 34<a
    
-    <script>
-        // Modal confirmation before opening SMS
-        const smsButton = document.getElementById('smsButton');
-        const confirmDialog = document.getElementById('confirmDialog');
-        const confirmSend = document.getElementById('confirmSend');
-        smsButton.addEventListener('click', () => {
-            confirmDialog.showModal();
-        });
-        confirmSend.addEventListener('click', () => {
-            window.location.href =
-                "sms:+12103435648?body=I read and agree to visitor parking rules and shared free parking time, and understand that the Condo Unit Owner's Account might be charged for overstay and excess parking violations. Building Unit:_____, Condo Unit:_____, Vehicle Make, Color, Model, and License Plate #: _____ (or attach photo showing license plate).";
-        });
-    </script>
 </body>
 </html>
